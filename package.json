@@ -1,0 +1,17 @@
+{
+  "name": "rename-project-files-kebabcase",
+  "version": "1.0.0",
+  "author": "Ahmad Yaman Sayed",
+  "main": "index.js",
+  "description": "Rename project files to kebabCase",
+  "license": "MIT",
+  "scripts": {
+    "rename-project-files": "node rename.js"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "glob": "^10.2.3",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7"
+  }
+}
