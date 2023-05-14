@@ -10,16 +10,21 @@
     "nodejs project",
     "js project"
   ],
-  "main": "index.js",
+  "main": "./src/index.js",
   "description": "Rename project files to kebabCase",
   "license": "MIT",
   "scripts": {
-    "rename-project-files": "node rename.js"
+    "rename-project-files": "node ./src/index.js"
+  },
+  "bin": {
+    "rename-project-files": "./src/index.js",
+    "rpf": "./src/index.js"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
     "glob": "^10.2.3",
     "lodash": "^4.17.21",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "rename-project-files-kebabcase": "^1.4.0"
   }
 }
