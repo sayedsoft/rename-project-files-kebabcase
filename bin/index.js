@@ -1,11 +1,11 @@
-const fs = require("fs");
-const path = require("path");
-const glob = require("glob");
-const { kebabCase } = require("lodash");
+import { renameSync } from "fs";
+import { extname, basename } from "path";
+import { sync } from "glob";
+import pkg from "lodash";
+const { kebabCase } = pkg;
 
-glob
-  .sync("**/*", { ignore: "**/{coverage,node_modules}/**" })
-  .forEach((filePath) => {
+sync("**/*", { ignore: "**/{coverage,node_modules}/**" }).forEach(
+  (filePath) => {
     const pathParts = filePath.split("/");
     const fileName = pathParts.pop();
     if (
@@ -13,8 +13,8 @@ glob
         fileName[0].toUpperCase() !== fileName[0]) ||
       fileName.includes("-")
     ) {
-      const ext = path.extname(fileName);
-      const newName = `${kebabCase(path.basename(fileName, ext))}${ext}`;
+      const ext = extname(fileName);
+      const newName = `${kebabCase(basename(fileName, ext))}${ext}`;
       let newPath = pathParts.concat(newName).join("/");
 
       if (fileName.includes("-")) {
@@ -23,7 +23,8 @@ glob
       console.log("Renaming...");
       console.log("Old", filePath);
       console.log("New", newPath);
-      fs.renameSync(filePath, newPath);
+      renameSync(filePath, newPath);
       console.log("Renamed.");
     }
-  });
+  }
+);

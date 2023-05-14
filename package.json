@@ -1,6 +1,6 @@
 {
   "name": "rename-project-files-kebabcase",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "author": "Ahmad Yaman Sayed",
   "keywords": [
     "Ahmad Yaman Sayed",
@@ -11,6 +11,7 @@
     "js project"
   ],
   "main": "./bin/index.js",
+  "type": "module",
   "description": "Rename project files to kebabCase",
   "license": "MIT",
   "scripts": {
